@@ -1,5 +1,12 @@
-<svelte:head>
-  <title>Taarifa Digital | Featured News</title>
-</svelte:head>
+<script context='module'>
+  export async function load() {
+    return {
+      status: 302,
+      redirect: '/featured'
+    }
+  }
+</script>
 
-<p>News Here</p>
+<svelte:head>
+  <title>Taarifa Digital</title>
+</svelte:head>

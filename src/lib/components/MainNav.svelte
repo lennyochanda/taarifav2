@@ -5,7 +5,7 @@
 <!-- Contents of this file will be used in the header and the responsive hamburger menu. -->
 <nav class="main-nav">
   <ul>
-    <NavItem href="/">
+    <NavItem href="/featured">
       Featured 
     </NavItem>
     <NavItem href="/entertainment" >
