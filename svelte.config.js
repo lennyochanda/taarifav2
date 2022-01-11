@@ -27,7 +27,7 @@ const config = {
 			],
 
 			/**
-			 * Automatically matches any markdown file inside the 'blog' folder, and
+			 * Automatically matches any markdown file inside the 'entertainment' folder, and
 			 * uses the named file to lay out those markdown files.
 			 * 
 			 * You can add more layouts. If the key matches a folder, it will apply
@@ -47,18 +47,6 @@ const config = {
 		// Default SvelteKit options
 		target: '#svelte',
 		adapter: adapter(),
-
-		/**
-		 * This `vite` block is only necessary to load the README file from the root. 
-		 * If you're not loading from the root directory, you should remove it.
-		 */  
-		vite: {
-			server: {
-				fs: {
-					allow: ['.']
-				}
-			}
-		}
 	}
 };
 
