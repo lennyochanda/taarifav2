@@ -38,8 +38,7 @@ const config = {
 			 * https://mdsvex.pngwn.io/docs#named-layouts
 			 */ 
 			layout: {
-				blog: 'src/routes/blog/_post.svelte',
-				entertainment: 'src/routes/entertainment/posts/_post.svelte'
+				entertainment: 'src/routes/entertainment/posts/_post.svelte',
 			}
 		}),
 	],
