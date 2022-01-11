@@ -39,6 +39,11 @@ const config = {
 			 */ 
 			layout: {
 				entertainment: 'src/routes/entertainment/posts/_post.svelte',
+				business: 'src/routes/business/posts/_post.svelte',
+				lifestyle: 'src/routes/lifestyle/posts/_post.svelte',
+				politics: 'src/routes/politics/posts/_post.svelte',
+				sports: 'src/routes/sports/posts/_post.svelte',
+				technology: 'src/routes/technology/posts/_post.svelte',
 			}
 		}),
 	],
