@@ -1,87 +1,94 @@
-<h1>Featured Posts</h1>
+<script context='module'>
+	export async function load({ fetch }) {
+		const [lifestyle, entertainment, politics, business, technology, sports] = await Promise
+				.all(
+					[
+						fetch(`/api/lifestyle/posts.json`).then(res => res.json()),
+						fetch(`/api/entertainment/posts.json`).then(res => res.json()),
+						fetch(`/api/politics/posts.json`).then(res => res.json()),
+						fetch(`/api/business/posts.json`).then(res => res.json()),
+						fetch(`/api/technology/posts.json`).then(res => res.json()),
+						fetch(`/api/sports/posts.json`).then(res => res.json()),
+					]
+				);
 
-<section class='lifestyle'>
-	<h2>Lifestyle</h2>
-	<div>
-		<h3>How to lose weight in 30 days</h3>
-		<p>
-			Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, veritatis, itaque. Omnis sit reiciendis odit ratione iure atque, tempora error ex explicabo suscipit sunt earum doloribus aliquid eos odio ullam.
-		</p>
-	</div>
-</section>
+		return {
+			props: {
+				lifestyle,
+				entertainment, 
+				politics, 
+				business,
+				technology, 
+				sports,
+			}
+		}
+	}
+</script>
 
-<section class='entertainment'>
-	<h2>Entertainment</h2>
-	<div>
-		<h3>The new band on the block taking the country by storm</h3>
-		<p>
-			Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, veritatis, itaque. Omnis sit reiciendis odit ratione iure atque, tempora error ex explicabo suscipit sunt earum doloribus aliquid eos odio ullam.
-		</p>
-	</div>
-</section>
+<script>
+	import Featured from '$lib/components/Featured.svelte'
 
-<section class="politics">
-	<h2>Politics</h2>
-	<div>
-		<h3>Heading into the new election year</h3>
-		<p>
-			Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, veritatis, itaque. Omnis sit reiciendis odit ratione iure atque, tempora error ex explicabo suscipit sunt earum doloribus aliquid eos odio ullam.
-		</p>
-	</div>
-</section>
+	export let lifestyle
+	export let entertainment
+	export let politics
+	export let business
+	export let technology
+	export let sports
+	
+	const segments = [
+		{
+			title: "Lifestyle",
+			posts: lifestyle,
+			href: "/lifestyle",
+			color: "green",
+		},
+		{
+			title: "Entertainment",
+			posts: entertainment,
+			href: "/entertainment",
+			color: "orange",
+		},
+		{
+			title: "Politics",
+			posts: politics,
+			href: "/politics",
+			color: "red",
+		},
+		{
+			title: "Business",
+			posts: business,
+			href: "/business",
+			color: "brown",
+		},
+		{
+			title: "Technology",
+			posts: technology,
+			href: "/technology",
+			color: "black",
+		},
+		{
+			title: "Sports",
+			posts: sports,
+			href: "/sports",
+			color: "skyblue"
+		},
+	]
 
-<section class="business">
-	<h2>Business</h2>
-	<div>
-		<h3>The cost of Corona Virus on the economy</h3>
-		<p>
-			Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, veritatis, itaque. Omnis sit reiciendis odit ratione iure atque, tempora error ex explicabo suscipit sunt earum doloribus aliquid eos odio ullam.
-		</p>
-	</div>
-</section>
+</script>
 
-<section class="sports">
-	<h2>Sports</h2>
-	<div>
-		<h3>Today's games in AFCON</h3>
-		<p>
-			Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, veritatis, itaque. Omnis sit reiciendis odit ratione iure atque, tempora error ex explicabo suscipit sunt earum doloribus aliquid eos odio ullam.
-		</p>
-	</div>
-</section>
+<ul>
+	{#each segments as {title, posts, color, href}}
+		<Featured 
+			{ title }
+			{ posts }
+			{ color }
+			{ href }
+		/>
+	{/each}
+</ul>
 
 <style>
-	section {
-		border-top: 2px solid;
-		margin: 2rem 0;
-	}
-	h2 {
-		margin-top: 0.25rem;
-		opacity: 0.4;
-		font-size: 1.2rem;
-	}
-	h3 {
-		margin-top: .5rem;
-		margin-bottom: 0;
-		line-height: 1.8rem;
-	}
-	.lifestyle {
-		border-color: greenyellow;
-	}
-	.entertainment {
-		border-color: orange;
-	}
-	.politics {
-		border-color: red;
-	}
-	.business {
-		border-color: darkred;
-	}
-	.sports {
-		border-color: skyblue;
-	}
-	p {
-		line-height: 1.25rem;
-		margin-top: 0.5rem;
+	ul {
+		padding: 0;
 	}
 </style>

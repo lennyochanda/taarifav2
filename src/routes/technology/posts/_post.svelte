@@ -9,6 +9,7 @@
   export let coverHeight = ''
   export let date = ''
   export let updated = ''
+  export let author = ''
   export let categories = []
 </script>
 

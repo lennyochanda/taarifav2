@@ -38,6 +38,7 @@ export const get = async (args) => {
 				coverImage: post.coverImage,
 				date: post.date,
 				categories: post.categories,
+				author: post.author,
 			}))
 		})
 

@@ -2,7 +2,7 @@ export const get = async (args) => {
 	try {
 		/**
 		 * These let you add query params to change what's retrieved from the endpoint, e.g., 
-		 * /api/posts.json?offset=10&limit=20
+		 * /api/business/posts.json?offset=10&limit=20
 		 **/
 
 		const offset = args.query.get('offset')
@@ -38,6 +38,7 @@ export const get = async (args) => {
 				coverImage: post.coverImage,
 				date: post.date,
 				categories: post.categories,
+				author: post.author,
 			}))
 		})
 

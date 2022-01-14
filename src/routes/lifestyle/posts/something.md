@@ -1,5 +1,6 @@
 ---
 title: "Implementing Linear and Binary Search Algorithms in JavaScript."
+author: "Lenny Ochanda"
 date: "2021-12-11"
 updated: "2021-12-11"
 categories: 
